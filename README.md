@@ -8,6 +8,21 @@
 import kikupico
 ```
 
+## モーター
+
+モーターを動かす。
+
+モーターの強さは変えられないので、モーターの動作時間で水の量を変える。
+
+```python
+# モーター ON
+kikupico.equipment.motor.on()
+# モーター OFF
+kikupico.equipment.motor.off()
+# モーター6秒動作
+kikupico.equipment.motor.run(6)
+```
+
 ## 土壌水分センサー
 
 土壌水分センサーの値を取得。

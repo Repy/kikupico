@@ -16,8 +16,6 @@ kikupico.clock.init()
 # wifiの切断
 kikupico.wifi.disconnect()
 
-kikupico.led.tick(10, 0.2)
-
 # 土壌センサー
 val = kikupico.sensor.soil.get()
 
@@ -27,6 +25,9 @@ kikupico.logging.log(str(val))
 
 # スリープ
 kikupico.clock.sleep(10)
+
+# モーターで水やり
+kikupico.equipment.motor.run(6)
 
 # 次回何秒後に実行するか
 kikupico.clock.deepsleep(30)
