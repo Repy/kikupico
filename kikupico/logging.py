@@ -1,5 +1,5 @@
-
 filename = "/kikupico.log"
+
 
 def log(data):
     fd = open(filename, "a")
