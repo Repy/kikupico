@@ -38,6 +38,22 @@ if wet_value < 1.0:
     kikupico.logging.log("べちゃべちゃ")
 ```
 
+## 気温湿度センサー
+
+気温湿度センサーの値を取得。
+
+使用前に初期化を実行すること。気温(temperature) 気圧(pressure) 湿度(humidity)いずれも小数で取得できる。
+
+```python
+# 気温湿度センサー取得
+tempval = kikupico.sensor.temperature.get()
+# tempval.temperature 気温
+# tempval.pressure 気圧
+# tempval.humidity 湿度
+if tempval.temperature > 29.5:
+    kikupico.logging.log("暑い")
+```
+
 ## LED
 
 LEDの点灯/消灯。
