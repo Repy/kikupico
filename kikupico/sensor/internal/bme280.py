@@ -149,7 +149,7 @@ class Bme280Sensor:
 
     def __get_status(self):
         data = self.__read_byte(0xFC)
-        status = data & 0x04
+        status = data & 0x08
         if status == 0:
             return False
         return True
@@ -179,10 +179,6 @@ class Bme280Sensor:
         self.__set_mode(MODE_ONETIME)
         while self.__get_status():
             time.sleep(0.1)
-        # 2回たたくと安定する
-        self.__set_mode(MODE_ONETIME)
-        while self.__get_status():
-            time.sleep(0.1)            
         data = self.__read_bytes(0xF7, 8)
         return self.calibration_data.compensate_temperature(data)
 
