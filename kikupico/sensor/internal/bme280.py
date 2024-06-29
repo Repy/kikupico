@@ -177,6 +177,9 @@ class Bme280Sensor:
 
     def get(self):
         self.__set_mode(MODE_ONETIME)
+        time.sleep(0.5)
+        self.__set_mode(MODE_ONETIME)
+        time.sleep(0.5)
         while self.__get_status():
             time.sleep(0.1)
         data = self.__read_bytes(0xF7, 8)
