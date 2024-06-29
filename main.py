@@ -4,30 +4,36 @@ import kikupico
 kikupico.led.tick(10)
 kikupico.led.tick(3, 1)
 
-# LED点灯消灯
-kikupico.led.on()
-kikupico.clock.sleep(1)
-kikupico.led.off()
+temp = kikupico.sensor.temperature.TemperatureSensor()
+t = temp.get()
+print(t.temperature)
+print(t.pressure)
+print(t.humidity)
 
-# wifiの接続
-kikupico.wifi.connect()
-# 時刻の同期
-kikupico.clock.init()
-# wifiの切断
-kikupico.wifi.disconnect()
+# # LED点灯消灯
+# kikupico.led.on()
+# kikupico.clock.sleep(1)
+# kikupico.led.off()
 
-# 土壌センサー
-val = kikupico.sensor.soil.get()
+# # wifiの接続
+# kikupico.wifi.connect()
+# # 時刻の同期
+# kikupico.clock.init()
+# # wifiの切断
+# kikupico.wifi.disconnect()
 
-# log
-kikupico.logging.log(str(kikupico.clock.get()))
-kikupico.logging.log(str(val))
+# # 土壌センサー
+# val = kikupico.sensor.soil.get()
 
-# スリープ
-kikupico.clock.sleep(10)
+# # log
+# kikupico.logging.log(str(kikupico.clock.get()))
+# kikupico.logging.log(str(val))
 
-# モーターで水やり
-kikupico.equipment.motor.run(6)
+# # スリープ
+# kikupico.clock.sleep(10)
 
-# 次回何秒後に実行するか
-kikupico.clock.deepsleep(30)
+# # モーターで水やり
+# kikupico.equipment.motor.run(6)
+
+# # 次回何秒後に実行するか
+# kikupico.clock.deepsleep(30)
