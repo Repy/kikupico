@@ -1,7 +1,7 @@
 import machine
 from .. import clock
 
-motor = machine.Pin(16, machine.Pin.OUT)
+motor = machine.Pin(15, machine.Pin.OUT)
 
 
 def on():
