@@ -152,3 +152,18 @@ kikupico.clock.sleep(5)
 # 600秒後までシャットダウンする。
 kikupico.clock.deepsleep(600)
 ```
+
+## HTTP通信
+
+HTTP通信をする。
+
+get_json()でGETリクエストでJSONデータ取得。
+post_json()でPOSTリクエストでJSONデータ取得。
+
+使いそうなHTTP通信の取り方は [HTTP.md](HTTP.md) に記載。
+
+```python
+# 
+res = kikupico.http.get_json("https://www.jma.go.jp/bosai/amedas/data/point/40191/20240628_15.json")
+value = res["20240628160000"]["precipitation1h"][0]
+```
