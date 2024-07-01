@@ -51,7 +51,7 @@ data = res[1]["timeSeries"][1]["areas"][0]["pops"][0]
 - "T18_24"は18時～24時
 
 ```python
-# 今日の
+# 予想降水確率
 res = kikupico.http.get_json("https://www.jma.go.jp/bosai/amedas/data/point/40191/20240628_15.json")
 value = res["forecasts"][0]["chanceOfRain"]["T18_24"]
 ```
