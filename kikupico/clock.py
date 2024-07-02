@@ -1,6 +1,7 @@
 import ntptime
 import machine
 import time
+from . import logging
 
 ntptime.host = "ntp.nict.jp"
 
@@ -20,7 +21,10 @@ class Time:
 
 
 def init():
-    ntptime.settime()
+    try:
+        ntptime.settime()
+    except Exception as e:
+        logging.error(e)
 
 
 def get():

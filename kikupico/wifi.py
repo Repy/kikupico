@@ -1,22 +1,32 @@
 import network
 import machine
 from . import led
+from . import logging
 
 ssid = ""
 key = ""
 
 nic = network.WLAN(network.STA_IF)
+wifipin = machine.Pin(23, machine.Pin.OUT)
 
+__limit = 10
 
 def connect():
-    machine.Pin(23, machine.Pin.OUT).high()
-    nic.active(True)
-    nic.connect(ssid, key)
-    while not nic.isconnected() and nic.status() >= 0:
-        led.tick(1, 0.5)
-
+    try:
+        wifipin.high()
+        nic.active(True)
+        nic.connect(ssid, key)
+        for i in range(__limit):
+            led.tick(1, 0.5)
+            if nic.status() != network.STAT_CONNECTING:
+                break
+    except Exception as e:
+        logging.error(e)
 
 def disconnect():
-    nic.disconnect()
-    nic.active(False)
-    machine.Pin(23, machine.Pin.OUT).low()
+    try:
+        nic.disconnect()
+        nic.active(False)
+        wifipin.low()
+    except Exception as e:
+        logging.error(e)
