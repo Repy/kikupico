@@ -25,15 +25,13 @@ tempval = kikupico.sensor.temperature.get()
 soilval = kikupico.sensor.soil.get()
 
 # log
-kikupico.logging.log(str(now))
-kikupico.logging.log(str(tempval))
-kikupico.logging.log(str(soilval))
+kikupico.logging.log(now, tempval, soilval)
 
 # スリープ
-kikupico.clock.sleep(10)
+kikupico.clock.sleep(5)
 
 # モーターで水やり
-kikupico.equipment.motor.run(6)
+kikupico.equipment.motor.run(3)
 
 # 次回何秒後に実行するか
 kikupico.clock.deepsleep(30)
