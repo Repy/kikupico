@@ -37,14 +37,14 @@ kikupico.equipment.motor.run(6)
 
 土壌水分センサーの値を取得。
 
-小数で出力される。
+0～65535で出力される。
 
 ```python
 # 土壌水分センサー
 wet_value = kikupico.sensor.soil.get()
-if wet_value > 1.7:
+if wet_value > 16000:
     kikupico.logging.log("パサパサ")
-if wet_value < 1.0:
+if wet_value < 9000:
     kikupico.logging.log("べちゃべちゃ")
 ```
 
