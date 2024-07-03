@@ -25,7 +25,7 @@ class Time:
 
     def set(self, epoch):
         self.__epoch = epoch
-        now = time.gmtime(epoch + 9 * 60 * 60)  # type: ignore
+        now = time.gmtime(epoch)  # type: ignore
         self.year = now[0]
         self.month = now[1]
         self.date = now[2]
@@ -44,7 +44,7 @@ def init():
 
 
 def get():
-    t = Time(time.time())
+    t = Time(time.time() + 9 * 60 * 60)
     return t
 
 

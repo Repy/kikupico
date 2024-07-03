@@ -1,5 +1,3 @@
-import traceback
-
 filename = "/kikupico.log"
 errorfilename = "/error.log"
 
