@@ -35,7 +35,7 @@ value = res["20240628160000"]["precipitation1h"][0]
 
 ```python
 # 予想降水確率
-res = kikupico.http.get_json("https://www.jma.go.jp/bosai/amedas/data/point/40191/20240628_15.json")
+res = kikupico.http.get_json("https://www.jma.go.jp/bosai/forecast/data/forecast/080000.json")
 time = res[1]["timeSeries"][1]["timeDefines"][0]
 data = res[1]["timeSeries"][1]["areas"][0]["pops"][0]
 ```
@@ -52,6 +52,6 @@ data = res[1]["timeSeries"][1]["areas"][0]["pops"][0]
 
 ```python
 # 予想降水確率
-res = kikupico.http.get_json("https://www.jma.go.jp/bosai/amedas/data/point/40191/20240628_15.json")
+res = kikupico.http.get_json("https://weather.tsukumijima.net/api/forecast/city/080010")
 value = res["forecasts"][0]["chanceOfRain"]["T18_24"]
 ```
