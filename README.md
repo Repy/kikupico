@@ -2,6 +2,16 @@
 
 菊潅水装置用ライブラリ
 
+## ダウンロード
+
+https://github.com/Repy/kikupico/archive/refs/heads/master.zip
+
+## インストール
+
+ダウンロードしたZIPファイルを解凍して、中に入っている「kikupico」というディレクトリを、Raspberry Pi Pico Wの中にThonny等でコピーしてください。
+
+## 使い方
+
 プログラムの一番上に書いて使用しましょう。
 
 ```python
