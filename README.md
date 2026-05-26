@@ -18,6 +18,10 @@ https://github.com/Repy/kikupico/archive/refs/heads/master.zip
 import kikupico
 ```
 
+## 電池残量の測定
+vattery_volt = kikupico.sensor.battery.get()
+eneloopの残量に応じて電圧値が減少します
+
 ## モーター
 
 モーターを動かす。
